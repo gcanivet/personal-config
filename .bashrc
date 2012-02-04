@@ -1,6 +1,12 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+platform='unknown'
+unamestr=`uname`
+
+if [[ "$unamestr" == 'Linux' ]]; then
+    platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+    platform='mac'
+fi
+
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -68,8 +74,12 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -G --color=auto' # -G for MACs
-    #alias dir='dir --color=auto'
+    if [[ $platform == 'linux' ]]; then
+		alias ls='ls --color=auto'
+    elif [[ $platform == 'mac' ]]; then
+		alias ls='ls -G'
+	fi
+	#alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
