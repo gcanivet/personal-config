@@ -6,4 +6,4 @@ set binary noeol
 nmap <silent> <C-N> :silent noh<CR>
 nmap ; :set invhlsearch<CR>
 :highlight Comment ctermfg=green
-
+:set number
