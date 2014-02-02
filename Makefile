@@ -1,4 +1,4 @@
-HOMEFILES = .bash_profile .bashrc .vimrc .profile .gitconfig
+HOMEFILES = .bash_profile .bashrc .vimrc .profile .gitconfig .aliases .functions
 
 install: 
 	cp $(HOMEFILES) ~
