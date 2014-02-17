@@ -108,4 +108,4 @@ fi
 #    . /etc/bash_completion
 #fi
 
-export PATH='/usr/local/bin:$PATH:/usr/local/node/0.4.12/bin:/Users/gcanivet/Development/phantomjs-1.5.0/bin'
+export PATH='/usr/local/bin:'$PATH':/usr/local/node/0.4.12/bin:/Users/gcanivet/Development/phantomjs-1.5.0/bin'
